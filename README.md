@@ -12,7 +12,7 @@ inorder to require:
 
 
 This module is designed to be used as strategy for a `webpack.ResolverPlugin` like so:
-```
+```js
 var DirectoryNameAsMain = require('webpack-directory-name-as-main');
 var webpackConfig = {
   entry: ...,
