@@ -1,0 +1,27 @@
+{
+  "name": "webpack-directory-name-as-main",
+  "version": "1.0.0",
+  "description": "Teach webpack to use the name of the directory as the main file for a module",
+  "main": "DirectoryNameAsDefaultFile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/spalger/webpack-directory-name-as-main.git"
+  },
+  "keywords": [
+    "webpack",
+    "module",
+    "main"
+  ],
+  "author": "Spencer Alger <email@spalger.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/spalger/webpack-directory-name-as-main/issues"
+  },
+  "homepage": "https://github.com/spalger/webpack-directory-name-as-main#readme",
+  "engines": {
+    "node": ">=0.12"
+  }
+}
