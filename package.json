@@ -1,5 +1,5 @@
 {
-  "name": "webpack-directory-name-as-main",
+  "name": "@elastic/webpack-directory-name-as-main",
   "version": "1.0.0",
   "description": "Teach webpack to use the name of the directory as the main file for a module",
   "main": "DirectoryNameAsDefaultFile.js",
