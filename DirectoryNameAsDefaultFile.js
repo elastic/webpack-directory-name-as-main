@@ -8,7 +8,7 @@
 */
 var basename = require('path').basename;
 
-function DirectoryDefaultFilePlugin(files) {}
+function DirectoryDefaultFilePlugin() {}
 module.exports = DirectoryDefaultFilePlugin;
 
 DirectoryDefaultFilePlugin.prototype.apply = function (resolver) {

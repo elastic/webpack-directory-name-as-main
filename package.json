@@ -23,5 +23,12 @@
   "homepage": "https://github.com/spalger/webpack-directory-name-as-main#readme",
   "engines": {
     "node": ">=0.12"
+  },
+  "devDependencies": {
+    "@elastic/eslint-config-kibana": "^0.3.0",
+    "babel-eslint": "^6.1.2",
+    "eslint": "^3.11.1",
+    "eslint-plugin-babel": "^4.0.0",
+    "eslint-plugin-mocha": "^4.7.0"
   }
 }
