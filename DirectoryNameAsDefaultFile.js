@@ -1,8 +1,6 @@
-/* jshint node:true, esnext:true */
-
-/*****
- * Modified clone of https://github.com/webpack/enhanced-resolve/blob/3b88905ad3cb6392f48f7bc57d351891774fd93b/lib/DirectoryDefaultFilePlugin.js
- *****
+/****************************************
+ * Modified clone of https://git.io/v1pul
+ ****************************************
 
 /*
   MIT License http://www.opensource.org/licenses/mit-license.php
