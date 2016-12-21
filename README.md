@@ -1,4 +1,4 @@
-# webpack-directory-name-as-main
+# @elastic/webpack-directory-name-as-main
 
 Teach webpack to use a file with the same name as the directory if that directory is required and it doesn't have an index.js file.
 
@@ -13,7 +13,7 @@ inorder to require:
 
 This module is designed to be used as strategy for a `webpack.ResolverPlugin` like so:
 ```js
-var DirectoryNameAsMain = require('webpack-directory-name-as-main');
+var DirectoryNameAsMain = require('@elastic/webpack-directory-name-as-main');
 var webpackConfig = {
   entry: ...,
 
