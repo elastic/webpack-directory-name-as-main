@@ -19,8 +19,7 @@ DirectoryDefaultFilePlugin.prototype.apply = function (resolver) {
       if (err || !stat) return done();
       if (!stat.isDirectory()) return done();
 
-      var index = resolver.join(req.path, req.request);
-      resolver.join(directory, 'index.js');
+      var index = resolver.join(directory, 'index.js');
 
       resolver.fileSystem.stat(index, function (err, stat) {
         if (!err && stat && stat.isFile()) {
