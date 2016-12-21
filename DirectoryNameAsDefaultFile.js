@@ -23,7 +23,7 @@ DirectoryDefaultFilePlugin.prototype.apply = function (resolver) {
       resolver.join(directory, 'index.js');
 
       resolver.fileSystem.stat(index, function (err, stat) {
-        if (stat && stat.isFile()) {
+        if (!err && stat && stat.isFile()) {
           // ignore directories containing index.js files
           return done();
         }
