@@ -21,14 +21,23 @@ DirectoryDefaultFilePlugin.prototype.apply = function (resolver) {
       if (err || !stat) return done();
       if (!stat.isDirectory()) return done();
 
-      resolver.doResolve('file', {
-        path: req.path,
-        query: req.query,
-        request: resolver.join(directory, basename(directory))
-      }, function (err, result) {
-        return done(undefined, result || undefined);
+      var index = resolver.join(req.path, req.request);
+      resolver.join(directory, 'index.js');
+
+      resolver.fileSystem.stat(index, function (err, stat) {
+        if (stat && stat.isFile()) {
+          // ignore directories containing index.js files
+          return done();
+        }
+
+        resolver.doResolve('file', {
+          path: req.path,
+          query: req.query,
+          request: resolver.join(directory, basename(directory))
+        }, function (err, result) {
+          return done(undefined, result || undefined);
+        });
       });
     });
-
   });
 };
