@@ -18,6 +18,7 @@ DirectoryDefaultFilePlugin.prototype.apply = function (resolver) {
     resolver.fileSystem.stat(directory, function (err, stat) {
       if (err || !stat) return done();
       if (!stat.isDirectory()) return done();
+      if (directory.match(/node_modules/)) return done();
 
       var index = resolver.join(directory, 'index.js');
 
