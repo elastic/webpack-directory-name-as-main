@@ -7,6 +7,7 @@
   Author Tobias Koppers @sokra
 */
 var basename = require('path').basename;
+var inNodeModulesRE = /\/node_modules\/|\\node_modules\\/;
 
 function DirectoryDefaultFilePlugin() {}
 module.exports = DirectoryDefaultFilePlugin;
@@ -14,11 +15,12 @@ module.exports = DirectoryDefaultFilePlugin;
 DirectoryDefaultFilePlugin.prototype.apply = function (resolver) {
   resolver.plugin('directory', function (req, done) {
     var directory = resolver.join(req.path, req.request);
+    if (directory.match(inNodeModulesRE)) return done();
 
     resolver.fileSystem.stat(directory, function (err, stat) {
-      if (err || !stat) return done();
-      if (!stat.isDirectory()) return done();
-      if (directory.match(/node_modules/)) return done();
+      if (err || !stat || !stat.isDirectory()) {
+        return done();
+      }
 
       var index = resolver.join(directory, 'index.js');
 
